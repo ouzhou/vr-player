@@ -1,12 +1,18 @@
+// more config: https://d.umijs.org/config
+
 import { defineConfig } from 'dumi';
 
 export default defineConfig({
-  title: 'vr-player',
-  favicon:
-    'https://user-images.githubusercontent.com/9554297/83762004-a0761b00-a6a9-11ea-83b4-9c8ff721d4b8.png',
-  logo:
-    'https://user-images.githubusercontent.com/9554297/83762004-a0761b00-a6a9-11ea-83b4-9c8ff721d4b8.png',
+  title: 'VrPlayer',
   outputPath: 'docs-dist',
   mode: 'site',
-  // more config: https://d.umijs.org/config
+  hash: true,
+  // history: { type: 'hash' },
+  publicPath: process.env.NODE_ENV === 'production' ? '/vr-player/' : '/',
+  base: process.env.NODE_ENV === 'production' ? '/vr-player/' : '/',
+  exportStatic: {},
+  logo:
+    process.env.NODE_ENV === 'production' ? '/vr-player/logo.png' : '/logo.png',
+  favicon:
+    process.env.NODE_ENV === 'production' ? '/vr-player/logo.png' : '/logo.png',
 });

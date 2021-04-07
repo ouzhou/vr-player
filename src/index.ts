@@ -1,1 +1,2 @@
-export { default as Foo } from './Foo';
+import VRPlayer from './VRPlayer';
+export default VRPlayer;
